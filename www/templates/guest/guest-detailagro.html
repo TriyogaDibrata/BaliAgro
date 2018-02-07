@@ -1,0 +1,37 @@
+<ion-view>
+	<ion-header-bar align-title="center" class="bar-balanced">
+  <button class="button button-icon icon ion-arrow-left-c" ui-sref="guest-home"></button>
+		<h1 class="title">Detail</h1>
+	</ion-header-bar>
+
+	<ion-content class="padding">
+  <ion-refresher
+  pulling-text = "Pull to refresh..."
+  on-refresh = "doRefresh()">
+  </ion-refresher>
+
+	<ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" id="detail-slider1" style="width:100%;height:200px;">
+      <ion-slide-page id="detail-slide24" style="background:url(&quot;{{gambar1}}&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+      <ion-slide-page id="detail-slide25" style="background:url(&quot;{{gambar2}}&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+      <ion-slide-page id="detail-slide26" style="background:url(&quot;{{gambar3}}&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+    </ion-slides>
+    <div class="spacer" style="width: 300px; height: 11px;"></div>
+    <div id="detail-markdown5" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;font-size:18px;"><strong>{{nama}}</strong></p>
+    </div>
+    <div id="detail-container1">
+      <div id="detail-markdown11" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">{{deskripsi}}</p>
+      </div>
+      <div id="detail-markdown14" class="show-list-numbers-and-dots">
+        <p style="color:#000000;"><strong> Harga Tiket  :</strong> </br>  {{harga}}</p>
+      </div>
+      <div id="detail-markdown15" class="show-list-numbers-and-dots">
+        <p style="color:#000000;"><strong> Alamat      :</strong> </br>{{alamat}}</p>
+      </div>
+    </div>
+
+	</ion-content>
+
+
+</ion-view>

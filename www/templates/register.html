@@ -1,0 +1,103 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button button-icon icon ion-arrow-left-c" ui-sref="firstpage"></button>
+        <h1 class="title">Register</h1>
+    </ion-header-bar>
+
+    <ion-content class="padding" style="background: url(img/bg-first.png) no-repeat center;background-size:cover;" class="has-header">
+
+    <form name="userForm" ng-submit="signUp(userForm)" novalidate>
+            <ion-list>
+                <label class="item item-input" ng-class="{ 'has-errors' : userForm.name.$invalid && !userForm.name.$pristine, 'no-errors' : userForm.name.$valid}" style="opacity: 0.7;">
+                    <span class="input-label">
+                    <strong>Nama</strong>
+                    </span>
+                    <input type="text" name="name" placeholder="" ng-model="dataUser.name" required minlength="5" maxlength="50">
+                </label>
+                <!--error messages-->
+                <div ng-show="userForm.name.$error.required && userForm.name.$invalid && !userForm.name.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+                  <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                    Your Name is Required !
+                </div>
+
+                <div ng-show="userForm.name.$error.minlength && userForm.name.$invalid && !userForm.name.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+                  <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                    Minimum length of this field is 5 characters!
+                </div>
+
+                <div class="spacer" style="height: 10px;"></div>
+
+                <label class="item item-input" ng-class="{ 'has-errors' : userForm.phone.$invalid && !userForm.phone.$pristine, 'no-errors' : userForm.phone.$valid}" style="opacity: 0.7;">
+                    <span class="input-label">
+                    <strong>Telpon</strong>
+                    </span>
+                    <input type="tel" name="phone" placeholder="" ng-model="dataUser.phone" required minlength="6" maxlength="15">
+                </label>
+                <!--error messages-->
+                <div ng-show="userForm.phone.$error.required && userForm.phone.$invalid && !userForm.phone.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+                  <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                    Your Phone is Required !
+                </div>
+
+                <div ng-show="userForm.phone.$error.minlength && userForm.phone.$invalid && !userForm.phone.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+                  <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                    Minimum length of this field is 6 characters !
+                </div>
+
+                <div class="spacer" style="height: 10px;"></div>
+
+                <label class="item item-input" ng-class="{ 'has-errors' : userForm.email.$invalid && !userForm.email.$pristine, 'no-errors' : userForm.email.$valid}" style="opacity: 0.7;">
+                    <span class="input-label">
+                    <strong>Email</strong>
+                    </span>
+                    <input type="email" name="email" placeholder="" ng-model="dataUser.email" required>
+                </label>
+                <!--error messages-->
+                <div ng-show="userForm.email.$error.required && userForm.email.$invalid && !userForm.email.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+                  <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                    Enter a valid email !
+                </div>
+
+
+                <div class="spacer" style="height: 10px;"></div>
+
+                <label class="item item-input" ng-class="{ 'has-errors' : userForm.password.$invalid && !userForm.password.$pristine, 'no-errors' : userForm.password.$valid}" style="opacity: 0.7;">
+                    <span class="input-label">
+                    <strong>Password</strong>
+                    </span>
+                    <input type="password" name="password" placeholder="" ng-model="dataUser.password" required maxlength="50" minlength="5">
+                </label>
+                <!--error messages-->
+                <div ng-show="userForm.password.$error.required && userForm.password.$invalid && !userForm.password.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+                  <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                    Password is required !
+                </div>
+
+                <div ng-show="userForm.password.$error.minlength && userForm.password.$invalid && !userForm.password.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+                  <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                    Minimum length of this field is 5 characters !
+                </div>
+
+            </ion-list>
+            
+            <div class="button-bar">
+                <button class="button button-calm button-block" type="reset" ng-click="ClearForm()">Clear</button>
+                <div class="spacer" style="width: 5px;"></div>
+                <button class="button button-balanced button-block" type="submit">Register</button>
+            </div>
+        </form>
+
+    </ion-content>
+
+
+</ion-view>
+
+<style> 
+.has-errors {
+  border-bottom: 3px solid #B83E2C;
+}
+ 
+.no-errors {
+  border-bottom: 3px solid green;
+}
+</style>

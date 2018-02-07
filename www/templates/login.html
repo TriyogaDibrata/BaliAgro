@@ -1,0 +1,63 @@
+<ion-view>
+  <ion-header-bar align-title="center" class="bar-dark">
+  <button class="button button-icon icon ion-arrow-left-c" ui-sref="firstpage"></button>
+    <h1 class="title">LOGIN</h1>
+  </ion-header-bar>
+
+   <ion-content padding="true" style="background: url(img/bg-first.png) no-repeat center;background-size:cover;" class="has-header">
+    <div>
+      <img ng-src="img/KkgxMd3GTXyHOQn6i9f3_logo1.png" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <div class="spacer" style="height: 16px;"></div>
+    
+    <form name="loginForm" ng-submit="login(loginForm)" novalidate>
+        <ion-list>
+
+            <label class="item item-input" ng-class="{ 'has-errors' : loginForm.email.$invalid && !loginForm.email.$pristine, 'no-errors' : loginForm.email.$valid}" style="opacity: 0.7;">
+                <span class="input-label">
+                <strong>Email</strong>
+                </span>
+                <input ng-model="user.email" type="email" name="email" placeholder="Email" required autofocus>
+            </label>
+            <!--error messages-->
+            <div ng-show="loginForm.email.$error.required && loginForm.email.$invalid && !loginForm.email.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+              <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                Enter A Valid Email !
+            </div>
+            <!--error messages-->
+
+            <div class="spacer" style="height: 10px;"></div>
+
+            <label class="item item-input" ng-class="{ 'has-errors' : loginForm.password.$invalid && !loginForm.password.$pristine, 'no-errors' : loginForm.password.$valid}" style="opacity: 0.7;">
+                <span class="input-label">
+                <strong>Password</strong>
+                </span>
+                <input ng-model="user.password" name="password" type="password" placeholder="Password" required maxlength="50" minlength="5">
+            </label>
+            <!--error messages-->
+            <div ng-show="loginForm.password.$error.required && loginForm.password.$invalid && !loginForm.password.$pristine" style="color: #fff; font-family: Arial Black, sans-serif; text-transform: uppercase; vertical-align: middle; font-size: 10px;">
+              <i class="ion-alert-circled" style="font-size: 14px; color: #B83E2C; vertical-align: middle;"></i> 
+                Password is required !
+            </div>
+            <!--error messages-->
+        </ion-list>
+  
+        <button  class="button button-positive button-block" type="submit">Log In</button>
+  
+        <button ui-sref="register" class="button button-positive button-clear button-block ">Or create an account</button>
+    </form>
+
+  </ion-content>
+
+
+</ion-view>
+
+<style> 
+.has-errors {
+  border-bottom: 3px solid #B83E2C;
+}
+ 
+.no-errors {
+  border-bottom: 3px solid green;
+}
+</style>

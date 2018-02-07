@@ -1,0 +1,21 @@
+<ion-view>
+	<ion-header-bar align-title="center" class="bar-balanced">
+	<button class="button button-icon icon ion-arrow-left-c" ui-sref="guest-home"></button>
+		<h1 class="title">Direction</h1>
+	</ion-header-bar>
+
+	<ion-content class="padding">
+
+	<button class="button button-block button-balanced" ng-click="direction()">Get Direction</button>
+
+    <div id="map" data-tap-disabled="true"> </div>
+	</ion-content>
+
+
+</ion-view>
+
+<style>
+	#map{
+		height: 85%;
+	}
+</style>

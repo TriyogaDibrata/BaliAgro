@@ -1,0 +1,34 @@
+<ion-view>
+	<ion-header-bar align-title="center" class="bar-balanced">
+		<h1 class="title">Profile</h1>
+	</ion-header-bar>
+
+	<ion-content class="padding">
+
+	<ion-list>
+            
+			<ion-item class="item-divider">Profile Member</ion-item>
+			
+			
+			<label class="item item-input">
+                <span class="input-label">Name</span>
+				<textarea placeholder="" readonly> {{" "+loggedin_name}}</textarea>
+            </label>
+			
+			<label class="item item-input">
+                <span class="input-label">Phone</span>
+				<textarea placeholder="" readonly>{{" "+loggedin_phone}} </textarea>
+            </label>
+ 
+			<label class="item item-input">
+                <span class="input-label">Email</span>
+				<textarea placeholder="" readonly > {{" "+loggedin_email}}</textarea>
+            </label>
+
+			<button ng-click="logout()" class="button button-assertive button-block  icon ion-log-out col-50 col-offset-25" style="font-size: 20px;">  Logout</button>
+			
+	        </ion-list>
+	</ion-content>
+
+
+</ion-view>
